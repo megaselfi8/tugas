@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            width: 500px;
+            height: 450px;
+            margin: auto;
+            position: relative;
+            padding-top: 10px;
+            top: 50px;
+            background-color:yellow;
+        }
+        .bilangan1{
+            width: 350px;
+            height: 30px;
+            margin: 10px auto;
+            padding-top: 10px;
+            background-color: yellowgreen;
+            border-radius: 10px;
+            
+        }
+
+        .bilangan2{
+            width: 350px;
+            height: 30px;
+            background-color: yellowgreen;
+            padding-top: 10px;
+            margin: 10px auto;
+            border-radius: 10px;
+        }
+        .operasi{
+            width: 500px;
+            height: 50px;
+            padding-top: 20px;
+            background-color: yellowgreen;
+            position: fixed;
+        }
+        /* .hasil{
+
+        } */
+    </style>
+
+    <script>
+        function operasitambah(){
+
+            var bilangan1=document.getElementById("bil1").value;
+            var bilangan2=document.getElementById("bil2").value;
+            angka1=Number(bilangan1);
+            angka2=Number(bilangan2);
+
+            var hasil=angka1+angka2;
+
+            document.getElementById("hasiltext").innerHTML=hasil;
+        }
+        function operasikurang(){
+
+            var bilangan1=document.getElementById("bil1").value;
+            var bilangan2=document.getElementById("bil2").value;
+            angka1=Number(bilangan1);
+            angka2=Number(bilangan2);
+
+            var hasil=angka1-angka2;
+
+            document.getElementById("hasiltext").innerHTML=hasil;
+        }
+        function operasikali(){
+
+            var bilangan1=document.getElementById("bil1").value;
+            var bilangan2=document.getElementById("bil2").value;
+            angka1=Number(bilangan1);
+            angka2=Number(bilangan2);
+
+            var hasil=angka1*angka2;
+
+            document.getElementById("hasiltext").innerHTML=hasil;
+        }
+
+        function operasibagi(){
+
+            var bilangan1=document.getElementById("bil1").value;
+            var bilangan2=document.getElementById("bil2").value;
+            angka1=Number(bilangan1);
+            angka2=Number(bilangan2);
+
+            var hasil=angka1/angka2;
+
+            document.getElementById("hasiltext").innerHTML=hasil;
+        }
+    </script>
+    
+</head>
+<body>
+    <div style="text-align: center;" class= "container">
+        <center>
+        <h2>Kalkulator Javascript</h2>
+        </center>
+        <br>
+        <br>
+        <div class="bilangan1">
+            <input type="text" id="bil1"/></input>
+        </div>
+        <br>
+        <br>
+        <div class="bilangan2">
+            <input type="text"  id="bil2"/></input>
+        </div>
+        <br>
+        <br>
+        <div class="operasi">
+            <!-- <button>Tambah</button> -->
+            <input type="button" onclick="operasitambah()" value="+"></input>
+            <input type="button" onclick="operasikurang()" value="-"></input>
+            <input type="button" onclick="operasikali()" value="x"></input>
+            <input type="button" onclick="operasibagi()" value="/"></input>
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="hasil">
+        <center>
+            <h1 id="hasiltext"></h1>
+        </center>
+            
+        </div>
+        
+    </div>
+</body>
+</html>

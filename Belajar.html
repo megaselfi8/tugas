@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .container {
+            width: 800px;
+            height: 1500px;
+            border: 2px solid black;
+            margin: auto;
+            position: relative;
+            top: 50px;
+            
+        }
+    
+        .judul {
+            width: 800px;
+            height: 100px;
+            border: 1px solid black;
+            padding: 20px;
+            box-sizing: border-box;
+            text-shadow: 3px 2px rgb(red, green, blue);
+        }
+
+        .judul h1{
+            text-shadow: 3px 2px red;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    
+        .menu{
+            width:800px ;
+            height: 50px;
+            border: 1px solid black;
+            padding-top:20px;
+            padding-left: 20px;
+            box-sizing: border-box;
+            
+        }
+
+        .menu a{
+            text-decoration: none;
+            color: salmon;
+        }
+
+        .menu :hover{
+            background-color: lightblue;
+            color: white;
+        }
+
+        .banner {
+            background-color: blue;
+            width: 800px;
+            height: 250px;
+            background-image: url(banner.jpg);
+            background-size: cover;
+            background-position-y: -150px;
+
+        }
+        .judulartikel {
+             padding-left: 20px;
+             padding-right: 20px;
+        }
+
+        .kontent {
+            width: 800px;
+            height: 400px;
+            padding: 20px 20px 20px 20px;
+            box-sizing: border-box;
+            background-color: peachpuff;
+            overflow: auto;
+            
+            
+        }
+
+        .kontent img {
+           float: left;
+           padding: 20px 20px;
+        }
+
+        .gallery {
+            background-color: turquoise;
+            margin: 5px 5px 5px 5px;
+            width: 190px;
+            height: 150px;
+            float: left;
+            background-image: url(cooki.jpg);
+            background-size: cover;
+        }
+
+        .galleryimage{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-image: url(twitter105.png);
+            left:710px;
+            top:-10px;
+
+        }
+
+        .thumbnail {
+            width: 170px;
+            height: 60px;
+            margin: 10px auto;
+            background-color: violet;
+
+        }
+
+        .judul .kotak {
+            height: 50px;
+            width: 180px;
+            opacity: 0.8;
+            background-color:blue;
+            
+        }
+
+
+
+        .footer{
+            height:50px;
+            line-height:50px;
+            background:#333;
+            color:#fff;
+        }
+
+        .panelMode{
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+            float: right;
+            position: fixed;
+            right: 10px;
+            border-radius: 15px;
+
+        }
+
+        .cobaeventku{
+            width: 70px;
+            height: 100px;
+            background-color: yellow;
+        }
+
+        .cobaevent1{
+            width: 70px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .cobaevent2{
+            width: 70px;
+            height: 100px;
+            background-color: red;
+        }
+    
+    </style>
+
+</head>
+<body>
+
+    <div class="panelMode" style="text-align: center;">
+
+        <br>
+
+        <button type="button" onclick="ubahwarna_dark()">Mode Malam Hari</button>
+
+        <br>
+        <br>
+
+        <button type="button" onclick="ubahwarna_light()">Mode Siang Hari</button>
+
+    </div>
+
+    <div class="container">
+        <div class="galleryimage"></div>
+
+        
+
+        <div class="judul">
+
+            <div class="kotak"><h1 class="judulatas">My Website</h1> </div>
+            
+                
+
+        </div>
+
+        <div class="menu">
+
+            <a href="#">Home</a>
+            <a href="#">Profil</a>
+            <a href="#">Contact</a>
+
+        </div>
+
+        <div class="banner">
+
+            
+
+        </div>
+
+        <div class="judulartikel">
+            <h2>Judul Artikel</h2>
+            <p>Ditulis Oleh Mega Selfiana</p>
+        </div>
+
+        <div class="kontent" id="kontent">
+
+            <img src="logoUb.jpg">
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi nobis iure saepe omnis debitis est expedita libero eum maxime eveniet eligendi fugit, error quod cumque, autem non sapiente itaque enim.<p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae id aspernatur alias fugiat itaque, excepturi ut explicabo hic, at ipsa quisquam laborum dolores debitis est sint, amet vero voluptas assumenda.</p>  
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia est libero fugit hic, alias dolore explicabo aliquid, voluptatibus corporis ea obcaecati a quas commodi nulla omnis enim provident corrupti veniam.</p>  
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium quasi mollitia sit nesciunt veniam esse, consequuntur ut quia, velit vel numquam odio voluptates ab tempore eaque dolorem. Accusantium, quia.</p>  
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae id aspernatur alias fugiat itaque, excepturi ut explicabo hic, at ipsa quisquam laborum dolores debitis est sint, amet vero voluptas assumenda.</p>  
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia est libero fugit hic, alias dolore explicabo aliquid, voluptatibus corporis ea obcaecati a quas commodi nulla omnis enim provident corrupti veniam.</p>  
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium quasi mollitia sit nesciunt veniam esse, consequuntur ut quia, velit vel numquam odio voluptates ab tempore eaque dolorem. Accusantium, quia.</p>  
+        
+        </div>
+
+        <br>
+
+        <div class="gallery">
+            <div class="thumbnail">
+                <h4 style="text-align: center;">Judul</h4>
+            </div>
+        </div>
+
+        <div class="gallery">2</div>
+
+        <div class="gallery">3</div>
+
+        <div class="gallery">4</div>
+
+        <div class="gallery">5</div>
+
+        <div class="gallery">6</div>
+
+        <div class="gallery">7</div>
+
+        <div class="gallery">8</div>
+
+        <br>
+
+        <div id="footer">
+            Copyright &copy; 2020
+            Designed by Mega
+        </div>
+
+    </div>
+
+    <div class="cobaeventku" id="cobaevent"   ondblclick="divekelakuan1()" onclick="divekelakuan()"></div>
+
+        <!-- <div class="cobaeventku" id="cobaevent"  onmouseup="divekelakuan()" onmousedown="divekelakuan1()"></div> -->
+
+    
+
+    <script>
+
+        function ubahwarna_dark(){
+            document.getElementById('kontent').style.backgroundColor="black";
+            document.getElementById('kontent').style.color="white";
+        }
+
+        function ubahwarna_light() {
+            document.getElementById('kontent').style.backgroundColor="yellow";
+            document.getElementById('kontent').style.color="black";
+        }
+
+        function divekelakuan(){
+            document.getElementById('cobaeventku1').className="cobaevent1";
+        }
+
+        function divekelakuan1(){
+            document.getElementById('cobaeventku2').className="cobaevent2";
+        }
+
+    </script>
+
+</body>
+</html>

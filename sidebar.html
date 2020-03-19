@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+       .sidebar1{
+        width:200px;
+        height: 100%;
+        background-color: blue;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        overflow-x: hidden;
+        transition: 0,5s;
+        }
+
+        .main1{
+            width: 700px;
+            height: 500px;
+            background-color: aliceblue;
+            margin-left: 200px;
+        }
+
+        .sidebar{
+        width: 0px;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: cadetblue;
+        position: fixed;
+        overflow-x: hidden;
+        transition: width 1s;
+        }
+
+        .sidebar span {
+            float: right;
+        }
+
+        .main{
+            width: 700px;
+            height: 500px;
+            background-color: aliceblue;
+            margin-left: 0px;
+            
+        }
+    </style>
+    
+
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        
+        <span style="font-size: 30px; cursor: pointer" onclick="closeNav()">X</span>
+        <br>
+        <ul>
+            <li>Home</li>
+            <li>Profil</li>
+            <li>Contact Us</li>
+        </ul>
+    </div>
+    <div class="main" >
+        <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776</span>
+        <h1>Ini Konten Utama</h1>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("sidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            }
+
+            /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+         function closeNav() {
+            document.getElementById("sidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            }
+        </script>
+</body>
+</html>
