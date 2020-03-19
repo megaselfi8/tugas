@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+       .header{
+            width: 100%;
+            height: 50px;
+            background-color: black;
+            position: fixed;
+            top:0;
+            left: 0;
+            padding: 5px;
+        }
+
+        .header h1{
+            font-size: large;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: white;
+        }
+
+        .mainproduct {
+            margin-top: 100px;
+            width: 70%;
+            height: 100%;
+            float: left;
+        }
+        
+
+        .cart {
+            margin-top: 100px;
+            width: 30%;
+            height: 100%;
+            float:left;
+        }
+
+        .cart h1{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .listproduk {
+            width: 200px;
+            height: 280px;
+            float:left;
+            margin:5px 5px;
+            box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+        }
+        .thumbnail {
+            width: 100%;
+            height: 50%;
+        }
+
+        .button {
+            background-color: blue;
+            border: none;
+            color: white;
+            padding: 5px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        }
+
+        .popUp-Content1 {
+            background-color:aliceblue;
+            margin:100px, 200px;
+            top: 100px;
+            left: 100px;
+            border: 1px solid #888;
+            width: 400px;
+            height: 200px;
+            /* position: absolute; */
+            position: fixed;
+            opacity: 0.5;
+            }
+        .popUp-Content2 {
+            background-color:aliceblue;
+            margin:100px, 200px;
+            top: 100px;
+            left: 100px;
+            border: 1px solid black;
+            width: 400px;
+            height: 200px;
+            /* position: absolute; */
+            position: fixed;
+            opacity: 0.5;
+            }
+
+
+        tr:hover {background-color:#f5f5f5;}
+
+    </style>
+</head>
+<body>
+    <html>
+<head>
+	<title></title>
+</head>
+<body>
+    
+	<div class="header">		
+			<h1>Vokasi Pedia</h1>
+    </div>
+    <br>
+    
+    <div id="container">
+        
+        <div class="popUp-Content">
+        </div>
+
+        <div class="mainproduct">
+
+            <div class="listproduk" v-for="motorku in motor">
+
+                <div class="thumbnail"> 
+                    <center><img v-bind:src="motorku.image" width="125px" height="100px" ></center>
+                </div>
+
+                <br>
+
+                <center>{{motorku.merek}}</center>
+                <br>
+                <center>Harga : {{motorku.harga}}</center>
+
+                <br>
+                <center><button class="button" v-model:value="qty" v-on:click="addCart(motorku.image)" type="button">Beli</button></center>
+                        
+            </div>
+        
+        </div>
+
+
+        <div class="cart">
+            <h1>Keranjang Belanja</h1>
+            <br>
+            
+            <table>
+            
+                <!-- <tr v-for="merek in keranjangmerek">
+                    <td >{{merek}}</td>
+                    <td><button  v-on:click="removeCart(index)" type="button">X</button></td>
+                </tr> -->
+
+                <tr v-for="(image, index) in keranjangimage">
+
+                    <td><img v-bind:src="image" width="100px" height="100px">
+                    
+                    <td><button  v-on:click="removeCart(index)" type="button">X</button></td>
+                </tr>
+                
+            {{qty}}
+            
+            </table>
+
+
+            
+            
+            <!-- {{keranjangmerek}} -->
+            <!-- {{keranjangimage}} -->
+            
+            </div>
+
+            <hr>
+
+            
+
+                <div class="popUp-Content1" v-if="qty >= 4">Whoaa tukang borong nih!
+                    <img src="bagus.jpg">
+                </div>
+
+                <div class="popUp-Content2" v-else-if="qty >= 2">Selamat! Kamu dapat bonus, karena membeli {{ qty }} buku</div>
+
+                <!-- <div v-else>Beli lebih banyak lagi untuk dapatkan bonus :)</div> -->
+               
+            
+
+    <!-- <label><input type="checkbox" v-model:value="showBonus"> Show Bonus</label>
+
+            <div class="detail" v-if="showBonus">
+                <p v-if="qty >= 10">Maaf kamu hanya boleh beli {{ qty }} aja yah.. soalnya kita gak punya banyak stok</p>
+                <p v-else-if="qty >= 5">Whoaa tukang borong nih!</p>
+                <p v-else-if="qty >= 2">Selamat! Kamu dapat bonus, karena membeli {{ qty }} buku</p>
+                <p v-else>Beli liebih banyak lagi untuk dapatkan bonus :)</p>
+              </div> -->
+
+              
+        
+        </div>  
+
+        
+        
+        <script>
+
+            var vm = new Vue({   
+                     el: '#container',
+                     data: {
+                         motor:[
+                             {merek:'Mesin Cuci',harga:1500000,image:'1.png'}
+                             ,{merek:'Sapu',harga:34000,image:'2.png'}
+                             ,{merek:'Mop',harga:25000,image:'3.png'}
+                             ,{merek:'Plate',harga:3400, image:'4.png'}
+                             ,{merek:'Glass',harga:1400,image:'5.png'}
+                         ],
+                         keranjangharga:[],
+                         keranjangmerek:[],
+                         keranjangimage:[],
+
+                         qty:0
+                       
+                     },
+        
+         /*            computed: {
+          total() {
+            return this.keranjangharga.reduce(function (sum, item) {
+                return sum + item
+            }, 0)
+          }
+        },  */
+                     methods: {
+            
+                         addCart:function(image){
+                             //this.keranjangharga.push(harga);
+                            //  this.keranjangmerek.push(merek);
+                            this.keranjangimage.push(image);
+
+                            this.qty+=1;
+                         },
+                         removeCart:function(index){
+                             this.keranjangmerek.splice(index,1)
+        
+                             this.keranjangharga.splice(index,1)
+
+                             this.keranjangimage.splice(index,1)
+                             this.qty-=1;
+                         }
+                     }    
+                })
+            
+            </script>
+        
+        
+</body>
+</html>
+
+    <script>
+
+    </script>
+</body>
+</html>
